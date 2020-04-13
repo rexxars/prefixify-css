@@ -1,6 +1,6 @@
 {
   "name": "prefixify-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reads a CSS file meant for 'global context' and prefixes each selector with a specified selector, wrapping the remainder in :global()",
   "main": "src/prefix.js",
   "author": "Espen Hovlandsdal <espen@hovlandsdal.com>",
