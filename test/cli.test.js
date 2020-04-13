@@ -23,10 +23,12 @@ test('cli: can read from stdin', (t) => {
 
 test('cli: gives help on no args', (t) => {
   t.plan(1)
-  t.throws(() => childProc.execFileSync(binPath, [], {encoding: 'utf8'}))
+  t.throws(() => childProc.execFileSync(binPath, [], {encoding: 'utf8', stdio: 'ignore'}))
 })
 
 test('cli: errors if no selector', (t) => {
   t.plan(1)
-  t.throws(() => childProc.execFileSync(binPath, [fixturePath], {encoding: 'utf8'}), /no selector/i)
+  t.throws(() =>
+    childProc.execFileSync(binPath, [fixturePath], {encoding: 'utf8', stdio: 'ignore'})
+  )
 })

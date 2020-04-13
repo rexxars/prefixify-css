@@ -8,7 +8,8 @@ const prefixer = postcss.plugin('postcss-prefixify', ({selector}) => {
   }
 })
 
-module.exports = async function prefix({content, selector}) {
-  const result = await postcss([prefixer({selector})]).process(content, {from: undefined})
-  return result.css
+module.exports = function prefix({content, selector}) {
+  return postcss([prefixer({selector})])
+    .process(content, {from: undefined})
+    .then((result) => result.css)
 }

@@ -42,6 +42,11 @@ inputStream
     process.exit(1)
   })
   .on('data', (chunk) => chunks.push(chunk))
-  .on('end', () => {
-    prefix({content: Buffer.concat(chunks), selector}).then((result) => console.log(result))
+  .on('end', async () => {
+    try {
+      console.log(await prefix({content: Buffer.concat(chunks), selector}))
+    } catch (err) {
+      console.error(err.stack)
+      process.exit(1)
+    }
   })
