@@ -1,0 +1,38 @@
+{
+  "name": "prefixify-css",
+  "version": "1.0.0",
+  "description": "Reads a CSS file meant for 'global context' and prefixes each selector with a specified selector, wrapping the remainder in :global()",
+  "main": "src/prefix.js",
+  "author": "Espen Hovlandsdal <espen@hovlandsdal.com>",
+  "scripts": {
+    "test": "node test/cli.test.js && node test/prefix.test.js",
+    "posttest": "eslint ."
+  },
+  "bin": {
+    "prefixify": "./bin/prefixify.js"
+  },
+  "files": [
+    "bin/prefixify.js",
+    "src/prefix.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "keywords": [
+    "postcss",
+    "css-modules"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "^7.0.27"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-sanity": "^1.149.0",
+    "prettier": "^2.0.4",
+    "tape": "^4.13.2"
+  }
+}
